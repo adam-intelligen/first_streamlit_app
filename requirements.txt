@@ -1,0 +1,1 @@
+-r https://github.com/snowflakedb/snowflake-connector-python/blob/0f67790a5bb2bc3ba4a9a7142ed48540286ca1db/tested_requirements/requirements_310.reqs
