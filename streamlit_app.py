@@ -1,7 +1,14 @@
+# streamlit_app.py
 
-import streamlit
+import streamlit as st
+import snowflake.connector
 
-streamlit.title('hello world')
+# Initialize connection.
+# Uses st.cache_resource to only run once.
+@st.cache_resource
+def init_connection():
+    return snowflake.connector.connect(
+        **st.secrets["snowflake"], client_session_keep_alive=True
+    )
 
-streamlit.header('header')
-streamlit.text('text1')
+conn = init_connection()
